@@ -6,6 +6,20 @@ month = randint(1,12)
 
 year = randint(1924,2004)
 
+months_name = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",]
+
 low_year = 1924 # update earliest possible year
 
 high_year = 2004 # update latest possible year
@@ -15,7 +29,8 @@ guess = 1
 for n in range(1,6): #loops five times
     month = randint(1,12)
     year = randint(low_year, high_year) # updates what years to search for based on answer given previously
-    print("Guess ", n, ": ", name, " were you born in ", month, " / ", year)
+    print("Guess ", n, ": ", name, " were you born in ", months_name[month-1], " / ", year) #months_name[month-1] takes the name of the month from the months_name list based on the integer month
+    #print(month)
     answer = input("yes, earlier, or later?")
 
     if answer == "yes":
