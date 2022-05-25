@@ -6,90 +6,35 @@ month = randint(1,12)
 
 year = randint(1924,2004)
 
+low_year = 1924
+
+high_year = 2004
+
 guess = 1
 
-# Guess 1
-print("Guess ", guess, ": ", name, " were you born in ", month, " / ", year)
-answer = input("yes or no?")
+for n in range(1,6):
 
-if answer == "yes":
-    print("I knew it")
-    exit()
-elif answer =="no":
-    if(guess < 5):
-        print("Drat! Lemme try again")
-    else:
-        print("I have other things to do, Good bye.")
+    print("Guess ", n, ": ", name, " were you born in ", month, " / ", year)
+    answer = input("yes, earlier, or later?")
+
+    if answer == "yes":
+        print("I knew it")
         exit()
-    month = randint(1,12)
-    year = randint(1924,2004)
-    guess = guess + 1
-
-# Guess 2
-print("Guess ", guess, ": ", name, " were you born in ", month, " / ", year)
-answer = input("yes or no?")
-
-if answer == "yes":
-    print("I knew it")
-    exit()
-elif answer =="no":
-    if(guess < 5):
-        print("Drat! Lemme try again")
-    else:
-        print("I have other things to do, Good bye.")
-        exit()
-    month = randint(1,12)
-    year = randint(1924,2004)
-    guess = guess + 1
-
-# Guess 3
-print("Guess ", guess, ": ", name, " were you born in ", month, " / ", year)
-answer = input("yes or no?")
-
-if answer == "yes":
-    print("I knew it")
-    exit()
-elif answer =="no":
-    if(guess < 5):
-        print("Drat! Lemme try again")
-    else:
-        print("I have other things to do, Good bye.")
-        exit()
-    month = randint(1,12)
-    year = randint(1924,2004)
-    guess = guess + 1
-
-# Guess 4
-print("Guess ", guess, ": ", name, " were you born in ", month, " / ", year)
-answer = input("yes or no?")
-
-if answer == "yes":
-    print("I knew it")
-    exit()
-elif answer =="no":
-    if(guess < 5):
-        print("Drat! Lemme try again")
-    else:
-        print("I have other things to do, Good bye.")
-        exit()
-    month = randint(1,12)
-    year = randint(1924,2004)
-    guess = guess + 1
-
-# Guess 5
-print("Guess ", guess, ": ", name, " were you born in ", month, " / ", year)
-answer = input("yes or no?")
-
-if answer == "yes":
-    print("I knew it")
-    exit()
-elif answer =="no":
-    if(guess < 5):
-        print("Drat! Lemme try again")
-    else:
-        print("I have other things to do, Good bye.")
-        exit()
-    month = randint(1,12)
-    year = randint(1924,2004)
-    guess = guess + 1
-
+    elif answer =="earlier":
+        if(n < 5):
+            print("Drat! Lemme try again")
+        else:
+            print("I have other things to do, Good bye.")
+            exit()
+        high_year = year
+        month = randint(1,12)
+        year = randint(low_year, high_year)
+    elif answer =="later":
+        if(n < 5):
+            print("Drat! Lemme try again")
+        else:
+            print("I have other things to do, Good bye.")
+            exit()
+        low_year = year
+        month = randint(1,12)
+        year = randint(low_year, high_year)
