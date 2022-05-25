@@ -13,7 +13,8 @@ high_year = 2004 # update latest possible year
 guess = 1
 
 for n in range(1,6): #loops five times
-
+    month = randint(1,12)
+    year = randint(low_year, high_year) # updates what years to search for based on answer given previously
     print("Guess ", n, ": ", name, " were you born in ", month, " / ", year)
     answer = input("yes, earlier, or later?")
 
@@ -27,8 +28,6 @@ for n in range(1,6): #loops five times
             print("I have other things to do, Good bye.")
             exit()
         high_year = year
-        month = randint(1,12)
-        year = randint(low_year, high_year) # updates what years to search for based on answer given previously
     elif answer =="later":
         if(n < 5):
             print("Drat! Lemme try again")
@@ -36,5 +35,3 @@ for n in range(1,6): #loops five times
             print("I have other things to do, Good bye.")
             exit()
         low_year = year
-        month = randint(1,12)
-        year = randint(low_year, high_year)
